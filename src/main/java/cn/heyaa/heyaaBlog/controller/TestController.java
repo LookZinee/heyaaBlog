@@ -25,7 +25,7 @@ public class TestController {
     @RequestMapping("/tologin")
     public ModelAndView login(HttpServletRequest req, ModelAndView view){
         System.out.println("进入主页");
-        view.setViewName("/web/index.html");
+        view.setViewName("webapp/web/index.html");
         return view;
     }
 }
