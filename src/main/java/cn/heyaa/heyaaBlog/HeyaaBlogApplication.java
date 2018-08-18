@@ -12,19 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 @SpringBootApplication
 public class HeyaaBlogApplication {
 
-	/**
-	 *
 
-	@RequestMapping("/")
-	String index(){
-		return "Hello Spring Boot";
-	} */
-
-	@RequestMapping("/toIndex")
-	ModelAndView toIndex(HttpServletRequest req, ModelAndView view){
-		view.setViewName("web/index.html");
-		return view;
-	}
 
 	public static void main(String[] args) {
 		SpringApplication.run(HeyaaBlogApplication.class, args);
