@@ -11,10 +11,11 @@ public class UserModel implements Serializable {
 
     private Long    id;         //主键id
     private String  userName;   //用户姓名
+    private String  userCode;   //用户CODE（唯一）
     private String  nickName;   //用户昵称
     private String  account;    //登录账号
     private String  password;   //登录密码
-    private String  mail;       //
+    private String  mail;       //邮箱
     private Date    createTime; //注册时间
     private Integer stat;       //账号状态
     private Long    version;    //版本号
@@ -89,5 +90,17 @@ public class UserModel implements Serializable {
 
     public void setVersion(Long version) {
         this.version = version;
+    }
+
+    public String getUserCode() {
+        return userCode;
+    }
+
+    public void setUserCode(String userCode) {
+        this.userCode = userCode;
+    }
+
+    public String toString(){
+        return "{userName : '"+ this.getUserName() +"',userCode : '"+ this.getUserCode() +"'}";
     }
 }

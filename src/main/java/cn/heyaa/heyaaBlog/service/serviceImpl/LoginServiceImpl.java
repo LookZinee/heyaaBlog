@@ -1,4 +1,4 @@
-package cn.heyaa.heyaaBlog.service.serviceImp;
+package cn.heyaa.heyaaBlog.service.serviceImpl;
 
 import cn.heyaa.heyaaBlog.model.UserModel;
 import cn.heyaa.heyaaBlog.service.LoginService;
@@ -6,7 +6,7 @@ import cn.heyaa.heyaaBlog.util.Res;
 import org.springframework.stereotype.Service;
 
 @Service
-public class LoginServiceImp implements LoginService {
+public class LoginServiceImpl implements LoginService {
 
     @Override
     public Res login(UserModel model) {

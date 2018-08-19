@@ -2,6 +2,7 @@ package cn.heyaa.heyaaBlog.controller;
 
 import cn.heyaa.heyaaBlog.model.UserModel;
 import cn.heyaa.heyaaBlog.service.LoginService;
+import cn.heyaa.heyaaBlog.service.UserService;
 import cn.heyaa.heyaaBlog.util.Res;
 import org.apache.juli.logging.Log;
 import org.apache.juli.logging.LogFactory;
@@ -12,6 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 /**
  * 登录逻辑controller
@@ -22,6 +24,9 @@ public class LoginController {
 
     @Resource
     private LoginService loginService;
+    @Resource
+    private UserService  userService;
+
     private final Log log = LogFactory.getLog(LoginController.class);
 
     @RequestMapping("/toLogin")
@@ -40,4 +45,12 @@ public class LoginController {
     public Res login(HttpServletRequest req, UserModel model){
         return loginService.login(model);
     }
+
+    @ResponseBody
+    @RequestMapping("/getUsers")
+    public void getUsers(){
+        List<UserModel> list = userService.getAllUsers();
+        System.out.println("查询到的用户一共有：" + list.size());
+    }
+
 }
