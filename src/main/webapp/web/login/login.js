@@ -8,6 +8,7 @@
 	    //登录
 	    $('#loginBtn').bind('click',function(){
 	        alert('1');
+	        $('#tipModal').modal();
 	    });
 	};
 })(jQuery,this);
